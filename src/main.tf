@@ -14,15 +14,22 @@ module "lambda_application" {
   execution_timeout = var.runtime.execution_timeout
 }
 
-resource aws_iam_role_policy_attachment "attach_duck_lambda_read_policy" {
+
+########
+#split_role = split("/", module.lambda_application.identity)
+#  role_name  = element(local.split_role, length(local.split_role) - 1)
+ 
+resource aws_iam_role_policy_attachment "attach_s3_read_policy" {
   role       = local.role_name
-  policy_arn = var.duck_lambda.data.security.iam.read.policy_arn
+  policy_arn = var.__webinar_goes_here__.data.security.iam.read.policy_arn
 }
 
-resource aws_iam_role_policy_attachment "attach_duck_lambda_write_policy" {
+resource aws_iam_role_policy_attachment "attach_s3_write_policy" {
   role       = local.role_name
-  policy_arn = var.duck_lambda.data.security.iam.write.policy_arn
+  policy_arn = var.__webinar_goes_here__.data.security.iam.write.policy_arn
 }
+
+########
 
 resource "aws_api_gateway_resource" "download" {
   rest_api_id = local.api_id

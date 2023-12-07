@@ -35,14 +35,14 @@ params:
       properties:
         path_download:
           type: string
-          title: Path
+          title: Download Path
           description: Last path segment of this API resource. Entering {proxy+} will respond to all paths.
           pattern: "((^[a-zA-Z0-9-_]+$)|(^\\{[a-zA-Z0-9-_]+\\}$)|(^\\{proxy\\+\\}$))"
           message:
             pattern: "Correct format of a path is lowercase letters, numbers, dashes and underscores. For capturing paths the same rules apply but the path must start with and end with curly braces."
         http_method_download:
           type: string
-          title: HTTP Method
+          title: HTTP Download Method
           description: The HTTP method(s) that this route should respond to.
           enum:
             - POST
@@ -54,14 +54,14 @@ params:
             - ANY
         path_upload:
           type: string
-          title: Path
+          title: Upload Path
           description: Last path segment of this API resource. Entering {proxy+} will respond to all paths.
           pattern: "((^[a-zA-Z0-9-_]+$)|(^\\{[a-zA-Z0-9-_]+\\}$)|(^\\{proxy\\+\\}$))"
           message:
             pattern: "Correct format of a path is lowercase letters, numbers, dashes and underscores. For capturing paths the same rules apply but the path must start with and end with curly braces."
         http_method_upload:
           type: string
-          title: HTTP Method
+          title: HTTP Upload Method
           description: The HTTP method(s) that this route should respond to.
           enum:
             - POST
@@ -73,14 +73,14 @@ params:
             - ANY
         path_test:
           type: string
-          title: Path
+          title: Test Path
           description: Last path segment of this API resource. Entering {proxy+} will respond to all paths.
           pattern: "((^[a-zA-Z0-9-_]+$)|(^\\{[a-zA-Z0-9-_]+\\}$)|(^\\{proxy\\+\\}$))"
           message:
             pattern: "Correct format of a path is lowercase letters, numbers, dashes and underscores. For capturing paths the same rules apply but the path must start with and end with curly braces."
         http_method_test:
           type: string
-          title: HTTP Method
+          title: HTTP Test Method
           description: The HTTP method(s) that this route should respond to.
           enum:
             - POST
